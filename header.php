@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title><?php bloginfo('title') ?></title>
     <link rel="stylesheet" href="<?php theAddAssets() ?>/foundation/css/foundation.min.css" />
-    <link rel="stylesheet" href="<?php bloginfo('template_directory') ?>/style.css" />
+    <link rel="stylesheet" href="<?php bloginfo('template_directory') ?>/assets/css/main.css" />
     <!-- FONT AWESOME -->
     <link rel="stylesheet" href="<?php theAddAssets() ?>/fontawesome/css/font-awesome.min.css">
 
