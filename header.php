@@ -9,6 +9,9 @@
     <link rel="stylesheet" href="<?php bloginfo('template_directory') ?>/style.css" />
     <!-- FONT AWESOME -->
     <link rel="stylesheet" href="<?php theAddAssets() ?>/fontawesome/css/font-awesome.min.css">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700" rel="stylesheet"> 
     <?php wp_head() ?>
 
   </head>
