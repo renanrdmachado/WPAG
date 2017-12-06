@@ -24,6 +24,9 @@ function linkShare($social = null,$content = null) {
     //*
     $link['linkedin'][0]    = 'Linkedin';
     $link['linkedin'][1]    = 'https://www.linkedin.com/shareArticle?mini=true&url='.$postURL.'&amp;title='.$postTitle;
+    //*
+    $link['email'][0]    = 'E-mail';
+    $link['email'][1]    = 'mailto:?subject='.$postTitle.'&body='.$postTitle.' | '.$postTitle;
     //FIM DE SEÇÃO
 
     if($social == null) {
@@ -49,5 +52,6 @@ function linkShare($social = null,$content = null) {
     elseif($social == 'buffer')     {echo '<a href="'.$link['buffer'][1].'" alt="'.$postTitle.'" target="_blank">'; if($content == null) {echo $link['buffer'][0];} else { echo $content;} echo '</a>';}
     elseif($social == 'whatsapp')   {echo '<a href="'.$link['whatsapp'][1].'" alt="'.$postTitle.'" target="_blank">'; if($content == null) {echo $link['whatsapp'][0];} else { echo $content;} echo '</a>';}
     elseif($social == 'linkedin')   {echo '<a href="'.$link['linkedin'][1].'" alt="'.$postTitle.'" target="_blank">'; if($content == null) {echo $link['linkedin'][0];} else { echo $content;} echo '</a>';}
+    elseif($social == 'email')   {echo '<a href="'.$link['email'][1].'" alt="'.$postTitle.'" target="_blank">'; if($content == null) {echo $link['email'][0];} else { echo $content;} echo '</a>';}
     //FIM DE SEÇÃO 
 }
