@@ -4,6 +4,10 @@ require_once('config/init.php'); //Init de Config
 require_once('functions/post-type.php'); //Custom Post Types
 require_once('functions/sidebar.php'); //Custom Sidebar (dynamic_sidebay)
 
+//  PLUGINS
+require_once('functions/plugins/newsletter/init.php'); //Custom Sidebar (dynamic_sidebay)
+
+
 /** Odin Classes. **/
 // require_once get_template_directory() . '/core/classes/class-bootstrap-nav.php';
 // require_once get_template_directory() . '/core/classes/class-shortcodes.php';
