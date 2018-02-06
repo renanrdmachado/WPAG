@@ -3,9 +3,30 @@ require_once('config/init.php'); //Init de Config
 
 require_once('functions/post-type.php'); //Custom Post Types
 require_once('functions/sidebar.php'); //Custom Sidebar (dynamic_sidebay)
+require_once('functions/taxonomies.php'); //Taxonomies
+require_once('functions/metabox.php'); //Metaboxes
 
 //  PLUGINS
-require_once('functions/plugins/newsletter/init.php'); //Custom Sidebar (dynamic_sidebay)
+// require_once('functions/plugins/newsletter/init.php'); //Custom Sidebar (dynamic_sidebay)
+
+function source_styles(){
+	wp_enqueue_style( 'foundationCss', getAddAssets().'/foundation/css/foundation.min.css', array(), $ver = false, $media = 'all' );
+	wp_enqueue_style( 'mainCss', get_bloginfo('template_directory').'/assets/css/main.css', array(), $ver = false, $media = 'all' );
+	wp_enqueue_style( 'fontAwesomeCss', getAddAssets().'/fontawesome/css/font-awesome.min.css', array(), $ver = false, $media = 'all' );
+	wp_enqueue_style( 'izimodalCss', getAddAssets().'/izimodal/css/iziModal.min.css', array(), $ver = false, $media = 'all' );
+}
+
+function source_scripts(){
+
+	wp_enqueue_script( 'jQueryJs', getAddAssets().'/foundation/js/vendor/jquery.js', array() , $ver = false, true );
+	wp_enqueue_script( 'mainJs', getJsAssets().'/script.js', array('jQueryJs') , $ver = false, true );
+	wp_enqueue_script( 'izimodalJs', getAddAssets().'/izimodal/js/iziModal.min.js', array() , $ver = false, true );
+	
+}
+
+add_action( 'wp_enqueue_scripts', 'source_styles' );
+add_action( 'wp_enqueue_scripts', 'source_scripts' );
+
 
 
 /** Odin Classes. **/

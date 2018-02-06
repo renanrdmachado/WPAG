@@ -1,1 +1,1 @@
-# WPAGP Starter Theme da MVL para parceiros
+# WPAGP Starter Theme da MVL para Agências

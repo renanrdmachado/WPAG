@@ -12,10 +12,10 @@ define('AG_SITE', 'http://movelcomunicacao.com.br');
 
 
 // DADOS DO CLIENTE
-define('CL_NAME', 'MVL - Parceria de negócios');
+define('CL_NAME', get_option('mvl_empresa'));
 
 // E-mail da Agência
-define('CL_EMAIL', 'contato@movelcomunicacao.com.br');
+define('CL_EMAIL', get_option('mvl_email'));
 
 // Site da agência
-define('CL_SITE', 'http://movelcomunicacao.com.br');
+define('CL_SITE', ' ');
