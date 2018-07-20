@@ -41,17 +41,11 @@ function source_styles(){
 
 function source_scripts(){
 
-	wp_enqueue_script(
-		'jQueryJs',
-		getAddAssets().'/foundation/js/vendor/jquery.js',
-		array() ,
-		$ver = false,
-		true
-	);
+	wp_enqueue_script('jquery');
 	wp_enqueue_script(
 		'mainJs',
 		getJsAssets().'/script.js',
-		array('jQueryJs'),
+		array('jquery'),
 		$ver = false,
 		true
 	);
