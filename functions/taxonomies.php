@@ -47,3 +47,18 @@
 // }
 
 // add_action( 'init', 'my_taxonomies_name' );
+
+// Simplificado
+// add_action( 'init', 'create_book_tax' );
+
+// function create_book_tax() {
+// 	register_taxonomy(
+// 		'genre',
+// 		'book',
+// 		array(
+// 			'label' => __( 'Genre' ),
+// 			'rewrite' => array( 'slug' => 'genre' ),
+// 			'hierarchical' => true,
+// 		)
+// 	);
+// }

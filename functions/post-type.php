@@ -1,13 +1,5 @@
 <?php
 // POST TYPE
-/**
- * Registers a new post type
- * @uses $wp_post_types Inserts new post type object into the list
- *
- * @param string  Post type key, must not exceed 20 characters
- * @param array|string  See optional args description above.
- * @return object|WP_Error the registered post type object, or an error object
- */
 // function prefix_register_name() {
 
 // 	$labels = array(
@@ -63,3 +55,14 @@
 // }
 
 // add_action( 'init', 'prefix_register_name' );
+
+
+// Simplificado
+// function codex_custom_init() {
+//     $args = array(
+//       'public' => true,
+//       'label'  => 'Books'
+//     );
+//     register_post_type( 'book', $args );
+// }
+// add_action( 'init', 'codex_custom_init' );

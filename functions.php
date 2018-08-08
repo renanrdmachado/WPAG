@@ -1,6 +1,5 @@
 <?php
 require_once('config/init.php'); //Init de Config
-
 require_once('functions/post-type.php'); //Custom Post Types
 require_once('functions/sidebar.php'); //Custom Sidebar (dynamic_sidebay)
 require_once('functions/taxonomies.php'); //Taxonomies
@@ -23,46 +22,27 @@ function source_styles(){
 		$ver = false,
 		$media = 'all'
 	);
-	wp_enqueue_style(
-		'fontAwesomeCss',
-		getAddAssets().'/fontawesome/css/font-awesome.min.css',
-		array(),
-		$ver = false,
-		$media = 'all'
-	);
-	wp_enqueue_style(
-		'izimodalCss',
-		getAddAssets().'/izimodal/css/iziModal.min.css',
-		array(),
-		$ver = false,
-		$media = 'all'
-	);
+
 }
 
 function source_scripts(){
 
 	wp_enqueue_script('jquery');
-	wp_enqueue_script(
-		'mainJs',
-		getJsAssets().'/script.js',
-		array('jquery'),
-		$ver = false,
-		true
-	);
-	wp_enqueue_script(
-		'izimodalJs',
-		getAddAssets().'/izimodal/js/iziModal.min.js',
-		array(),
-		$ver = false,
-		true
-	);
+
+	global $wp_query;
+	wp_register_script( 'mainJs', getJsAssets().'/script.js', array('jquery') );
+	wp_localize_script( 'mainJs', 'loadmore_params', array(
+		'ajaxurl' => site_url() . '/wp-admin/admin-ajax.php', // WordPress AJAX
+		'posts' => json_encode( $wp_query->query_vars ), // everything about your loop is here
+		'current_page' => get_query_var( 'paged' ) ? get_query_var('paged') : 1,
+		'max_page' => $wp_query->max_num_pages
+	) );
+ 	wp_enqueue_script( 'mainJs' );
 	
 }
 
 add_action( 'wp_enqueue_scripts', 'source_styles' );
 add_action( 'wp_enqueue_scripts', 'source_scripts' );
-
-
 
 /** Odin Classes. **/
 // require_once get_template_directory() . '/core/classes/class-bootstrap-nav.php';
