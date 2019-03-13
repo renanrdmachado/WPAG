@@ -64,7 +64,7 @@ function my_admin_style() { ?>
  	width:60px;
  	height:20px;
  	display: block;
- 	background-image: url('<?php echo getConfigAssets() ?>/img/icon-top.png ?>');
+ 	background-image: url('<?php echo getConfigAssets() ?>/img/icon-top.png');
  	}
  </style>
  <?php } add_action('admin_enqueue_scripts','my_admin_style');?>
