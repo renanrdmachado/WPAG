@@ -9,7 +9,8 @@ require_once('functions/metabox.php'); //Metaboxes
 // require_once('functions/plugins/newsletter/init.php'); //Custom Sidebar (dynamic_sidebay)
 
 function WPAG_scripts(){
-	// CSS
+	
+	/*********** CSS ***********/
 	//// Bootstrap
 	wp_enqueue_style(
 		'bootstrapCss',
@@ -49,7 +50,7 @@ function WPAG_scripts(){
 		$media = 'all'
 	);
 
-	// Javascript
+	/*********** Javascript ***********/
 	//// jQuery
 	wp_enqueue_script('jquery');
 
