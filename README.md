@@ -1,1 +1,1 @@
-# WPAGP Starter Theme da MVL para Agências
+# WPAG - MVL para Agências
