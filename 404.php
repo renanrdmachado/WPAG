@@ -1,5 +1,5 @@
-<?php get_header() ?>
 <?php wp_redirect( home_url(), 302 ) ?>
+<?php get_header() ?>
 
 <div class="row page-interna page-erro">
 	<center>
