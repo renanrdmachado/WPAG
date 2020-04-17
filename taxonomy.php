@@ -1,6 +1,6 @@
 <?php get_header() ?>
 <?php wp_redirect( home_url(), 302 ) ?>
-<div class="row">
+<div class="container">
 	<?php if(have_posts()) : ?>
 		<?php while(have_posts()) : the_post(); ?>
 			<?php if(has_post_thumbnail()) {

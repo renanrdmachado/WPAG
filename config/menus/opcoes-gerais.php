@@ -79,6 +79,14 @@ if (!current_user_can('manage_options'))  {
 
 			<?php create_form_field(array(
 				'type' => 'text',
+				'name' => 'Whatsapp',
+				'id'	=> 'mvl_whatsapp',
+				'slug'	=> 'whatsapp',
+				'placeholder'	=> 'Whatsapp'
+				))?>
+
+			<?php create_form_field(array(
+				'type' => 'text',
 				'name' => 'E-mail',
 				'id'	=> 'mvl_email',
 				'slug'	=> 'email',

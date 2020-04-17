@@ -19,29 +19,41 @@ function WPAG_scripts(){
 		$ver = false,
 		$media = 'all'
 	);
+
 	//// Fontawesome
-	wp_enqueue_style(
-		'fontawesomeCss',
-		getAddAssets().'/fontawesome/css/fontawesome.min.css',
-		array(),
-		$ver = false,
-		$media = 'all'
-	);
+	// wp_enqueue_style(
+	// 	'fontawesomeCss',
+	// 	getAddAssets().'/fontawesome/css/all.min.css',
+	// 	array(),
+	// 	$ver = false,
+	// 	$media = 'all'
+	// );
+
 	//// Slick
-	wp_enqueue_style(
-		'slickCss',
-		getAddAssets().'/slick/slick.min.css',
-		array(),
-		$ver = false,
-		$media = 'all'
-	);
-	wp_enqueue_style(
-		'slickThemeCss',
-		getAddAssets().'/slick/slick-theme.css',
-		array(),
-		$ver = false,
-		$media = 'all'
-	);
+	// wp_enqueue_style(
+	// 	'slickCss',
+	// 	getAddAssets().'/slick/slick.min.css',
+	// 	array(),
+	// 	$ver = false,
+	// 	$media = 'all'
+	// );
+	// wp_enqueue_style(
+	// 	'slickThemeCss',
+	// 	getAddAssets().'/slick/slick-theme.css',
+	// 	array(),
+	// 	$ver = false,
+	// 	$media = 'all'
+	// );
+
+	//// Venobox
+	// wp_enqueue_style(
+	// 	'venoboxCss',
+	// 	getAddAssets().'/venobox/venobox.css',
+	// 	array(),
+	// 	$ver = false,
+	// 	$media = 'all'
+	// );
+
 	//// Main
 	wp_enqueue_style(
 		'mainCss', get_bloginfo('template_directory').'/assets/css/main.css',
@@ -54,25 +66,24 @@ function WPAG_scripts(){
 	//// jQuery
 	wp_enqueue_script('jquery');
 
-	//// Bootstrap
-	wp_register_script(
-		'bootstrapJs',
-		getAddAssets().'/bootstrap/css/bootstrap.min.css',
-		array('jquery')
-	);
+	//// Venobox
+	// wp_register_script(
+	// 	'venoboxJs',
+	// 	getJsAssets().'/venobox/venobox.js',
+	// 	array('jquery')
+	// );
 
 	//// Main
 	global $wp_query;
 	wp_register_script( 'mainJs', getJsAssets().'/main.js', array('jquery') );
 	wp_localize_script( 'mainJs', 'params', array(
-		'ajaxurl' => site_url() . '/wp-admin/admin-ajax.php', // WordPress AJAX
-		'posts' => json_encode( $wp_query->query_vars ), // everything about your loop is here
-		'current_page' => get_query_var( 'paged' ) ? get_query_var('paged') : 1,
-		'max_page' => $wp_query->max_num_pages
+		'ajaxurl' => site_url() . '/wp-admin/admin-ajax.php',
+		// 'posts' => json_encode( $wp_query->query_vars ),
+		// 'current_page' => get_query_var( 'paged' ) ? get_query_var('paged') : 1,
+		// 'max_page' => $wp_query->max_num_pages
 	) );
  	wp_enqueue_script( 'mainJs' );
 }
-
 add_action( 'wp_enqueue_scripts', 'WPAG_scripts' );
 
 // POSTS THUMBNAIL
@@ -83,4 +94,27 @@ register_nav_menus(array(
 	'principal' => 'Principal',
 ));
 
+// SANITIZE FILE NAME
+function my_custom_file_name ( $filename ){
+	$info = pathinfo( $filename );
+	$ext = empty( $info['extension'] ) ? '' : '.' . $info['extension'];
+	$name = basename( $filename, $ext );
+	$finalFileName = sanitize_title( $name );
+	// File name will be the same as the image file name, but sanitized.
+	return $finalFileName . $ext;
+}
+add_filter( 'sanitize_file_name', 'my_custom_file_name', 100 );
 
+// SEARCH ONLY 'POSTS'
+function SearchFilter($query) {
+    if ($query->is_search) {
+        $query->set('post_type', 'post');
+    }
+    return $query;
+}
+add_filter('pre_get_posts','SearchFilter');
+
+// ONLY NUMS
+function onlyNums($num){
+	preg_match_all('!\d+!', get_option('mvl_whatsapp'), $num);
+}
