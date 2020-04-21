@@ -4,6 +4,7 @@ require_once('functions/post-type.php'); //Custom Post Types
 require_once('functions/sidebar.php'); //Custom Sidebar (dynamic_sidebay)
 require_once('functions/taxonomies.php'); //Taxonomies
 require_once('functions/metabox.php'); //Metaboxes
+require_once('functions/admin_scheme.php'); //Admin Scheme
 
 //  PLUGINS
 // require_once('functions/plugins/newsletter/init.php'); //Custom Sidebar (dynamic_sidebay)
@@ -92,6 +93,7 @@ add_theme_support('post-thumbnails' );
 // MENU
 register_nav_menus(array(
 	'principal' => 'Principal',
+	'rodape' => 'Rodapé',
 ));
 
 // SANITIZE FILE NAME
@@ -118,3 +120,23 @@ add_filter('pre_get_posts','SearchFilter');
 function onlyNums($num){
 	preg_match_all('!\d+!', get_option('mvl_whatsapp'), $num);
 }
+
+// Customizer
+function mytheme_setup() {
+    add_theme_support('custom-logo');
+}
+
+add_action('after_setup_theme', 'mytheme_setup');
+
+// Remove admin top bar
+show_admin_bar(false);
+
+// set_default_admin_color
+function set_default_admin_color($user_id) {
+    $args = array(
+        'ID' => $user_id,
+        'admin_color' => 'mvl'
+    );
+    wp_update_user( $args );
+}
+add_action('user_register', 'set_default_admin_color');

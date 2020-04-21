@@ -15,3 +15,5 @@
   <body <?php body_class();?>>
   	<div id="link-home"></div>
   	<?php get_template_part('template/top','head');?>
+
+    <div id="main-content" class="main-content">

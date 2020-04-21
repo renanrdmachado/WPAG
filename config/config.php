@@ -1,5 +1,4 @@
 <?php 
-
 // DADOS DA AGÊNCIA
 // Nome da agência
 define('AG_NAME', 'MVL - Parceria de negócios');

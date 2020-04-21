@@ -2,16 +2,39 @@
 .alignnone{margin:5px 20px 20px 0}.aligncenter,div.aligncenter{display:block;margin:5px auto}.alignright{float:right;margin:5px 0 20px 20px}.alignleft{float:left;margin:5px 20px 20px 0}a img.alignright{float:right;margin:5px 0 20px 20px}a img.alignleft,a img.alignnone{margin:5px 20px 20px 0}a img.alignleft{float:left}a img.aligncenter{display:block;margin-left:auto;margin-right:auto}.wp-caption{background:#fff;border:1px solid #f0f0f0;max-width:96%;padding:5px 3px 10px;text-align:center}.wp-caption.alignleft,.wp-caption.alignnone{margin:5px 20px 20px 0}.wp-caption.alignright{margin:5px 0 20px 20px}.wp-caption img{border:0;height:auto;margin:0;max-width:98.5%;padding:0;width:auto}.wp-caption p.wp-caption-text{font-size:11px;line-height:17px;margin:0;padding:0 4px 5px}.screen-reader-text{border:0;clip:rect(1px,1px,1px,1px);clip-path:inset(50%);height:1px;margin:-1px;overflow:hidden;padding:0;position:absolute!important;width:1px;word-wrap:normal!important}.screen-reader-text:focus{background-color:#eee;clip:auto!important;clip-path:none;color:#444;display:block;font-size:1em;height:auto;left:5px;line-height:normal;padding:15px 23px 14px;text-decoration:none;top:5px;width:auto;z-index:100000}
 #wpadminbar #wp-admin-bar-wp-logo > .ab-item .ab-icon{width:60px!important;height:20px!important;}#wpadminbar #wp-admin-bar-wp-logo > .ab-item .ab-icon::before {content:''!important;width:60px;height:20px;display: block;background-image: url('../../config/assets/img/icon-top.png');}
 
-* {transition:.2s;}
 body,h1,h2,h3,h4,h5,h6,p {font-family: 'Open Sans', sans-serif;}
 /*pre {display: none;}*/
 *:focus {outline:none!Important;}
 
-.menu-toggle {display: none;border: 2px solid #fff;padding: 8px;z-index: 999;background-color: rgba(255,255,255,0);width: 45px;margin-top: 26px;}
-.menu-toggle span {display: block;margin-bottom: 4px;width: 20px;height: 3px;background-color:#fff;margin-left: auto;margin-right: auto;}
+.menu-toggle {display: none;border: 2px solid #333;padding: 8px;z-index: 999;background-color: rgba(255,255,255,0);width: 45px;margin-top: 17px;margin-left: auto;}
+.menu-toggle span {display: block;margin-bottom: 4px;width: 20px;height: 3px;background-color:#333;margin-left: auto;margin-right: auto;}
 .menu-toggle span:last-child {margin-bottom: 0px;}
 
 div.wpcf7-validation-errors { border:0!important; }
 div.wpcf7-mail-sent-ok {border: 0px solid #398f14!important;background-color: rgba(172,215,168,1);padding: 20px!important;color: #047b2f!important;text-align: center;border-radius:6px;margin-top:20px!important;}
 div.wpcf7-validation-errors {border: 0px solid #398f14!important;background-color: rgba(218,136,120,1);padding: 20px!important;color: #fff!important;text-align: center;border-radius:6px;margin-top:20px!important;}
 span.wpcf7-not-valid-tip {display: inline-block!important;}
+
+.site-brand img{max-width:100%;height:auto;}
+
+.main-header {box-shadow:0 0 4px 0 rgba(0,0,0,0.1);padding:20px 0}
+.main-header .navbar {display: table;margin-top: 28px;margin-left: auto;}
+.main-header .navbar>div>ul {padding-left:0;margin-bottom:0;list-style: none;}
+.main-header .navbar>div>ul>li{display:inline-block;}
+.main-header .navbar>div>ul>li>a{display:block;padding:5px 10px;}
+.main-header .navbar>div>ul>li>a:hover{text-decoration: none;}
+
+.main-footer {background-color: #eee;padding:25px;}
+.main-footer .widget.widget_nav_menu h2{font-size:18px;text-transform:uppercase;font-weight:600;}
+.main-footer .widget.widget_nav_menu ul{padding-left:0;list-style:none;}
+.main-footer .widget.widget_nav_menu ul:last-child{margin-bottom:0;}
+.main-footer .widget.widget_nav_menu ul>li>a{}
+.main-footer .widget.widget_nav_menu ul>li>a:hover{text-decoration:none;}
+
+.main-content {margin:25px auto;}
+
+.menu-mobile { display:none;background-color: rgba(0,0,0,.4); position:fixed; top:0; left:0; height:100%; width:100%; }
+.menu-mobile .menu-mobile-content{ background-color: #fff ; position:absolute; height:100%; width:80%; }
+.menu-mobile .menu-mobile-content ul{padding-left:0;list-style: none;}
+.menu-mobile .menu-mobile-content ul li a{padding:10px;display:block;}
+.menu-mobile .close{text-shadow:none;color:#fff;opacity:1;padding:20px;background-color: #505050; width: 20%;}
