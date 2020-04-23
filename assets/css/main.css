@@ -15,7 +15,7 @@ div.wpcf7-mail-sent-ok {border: 0px solid #398f14!important;background-color: rg
 div.wpcf7-validation-errors {border: 0px solid #398f14!important;background-color: rgba(218,136,120,1);padding: 20px!important;color: #fff!important;text-align: center;border-radius:6px;margin-top:20px!important;}
 span.wpcf7-not-valid-tip {display: inline-block!important;}
 
-.site-brand img{max-width:100%;height:auto;}
+img{max-width:100%;height:auto;}
 
 .main-header {box-shadow:0 0 4px 0 rgba(0,0,0,0.1);padding:20px 0}
 .main-header .navbar {display: table;margin-top: 28px;margin-left: auto;}
@@ -38,3 +38,6 @@ span.wpcf7-not-valid-tip {display: inline-block!important;}
 .menu-mobile .menu-mobile-content ul{padding-left:0;list-style: none;}
 .menu-mobile .menu-mobile-content ul li a{padding:10px;display:block;}
 .menu-mobile .close{text-shadow:none;color:#fff;opacity:1;padding:20px;background-color: #505050; width: 20%;}
+
+.slick-prev {left:0}
+.slick-next {right:0}

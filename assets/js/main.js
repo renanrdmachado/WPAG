@@ -8,4 +8,12 @@ $(document).ready(function(){
         e.preventDefault();
         $('.menu-mobile').slideUp('fast');
     });
+
+    $('.slick-slider').slick({
+        dots: true,
+        infinite: false,
+        speed: 300,
+        adaptiveHeight: true,
+        centerPadding: '60px',
+    });
 });

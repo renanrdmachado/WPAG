@@ -66,3 +66,21 @@
 //     register_post_type( 'book', $args );
 // }
 // add_action( 'init', 'codex_custom_init' );
+
+function cpt_registers() {
+    $args = array(
+      'public' => true,
+      'label'  => 'Slider',
+      'menu_icon'   => 'dashicons-format-image',
+      'supports'            => array(
+        			'title',
+        			'editor',
+        			'author',
+        			'thumbnail',
+        			'revisions',
+        			'page-attributes',
+        		),
+    );
+    register_post_type( 'cpt-slider', $args );
+}
+add_action( 'init', 'cpt_registers' );

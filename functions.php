@@ -31,20 +31,20 @@ function WPAG_scripts(){
 	// );
 
 	//// Slick
-	// wp_enqueue_style(
-	// 	'slickCss',
-	// 	getAddAssets().'/slick/slick.min.css',
-	// 	array(),
-	// 	$ver = false,
-	// 	$media = 'all'
-	// );
-	// wp_enqueue_style(
-	// 	'slickThemeCss',
-	// 	getAddAssets().'/slick/slick-theme.css',
-	// 	array(),
-	// 	$ver = false,
-	// 	$media = 'all'
-	// );
+	wp_enqueue_style(
+		'slickCss',
+		getAddAssets().'/slick/slick.css',
+		array(),
+		$ver = false,
+		$media = 'all'
+	);
+	wp_enqueue_style(
+		'slickThemeCss',
+		getAddAssets().'/slick/slick-theme.css',
+		array(),
+		$ver = false,
+		$media = 'all'
+	);
 
 	//// Venobox
 	// wp_enqueue_style(
@@ -67,8 +67,15 @@ function WPAG_scripts(){
 	//// jQuery
 	wp_enqueue_script('jquery');
 
+	//// Slick
+	wp_enqueue_script(
+		'slickJs',
+		getAddAssets().'/slick/slick.min.js',
+		array('jquery')
+	);
+
 	//// Venobox
-	// wp_register_script(
+	// wp_enqueue_script(
 	// 	'venoboxJs',
 	// 	getJsAssets().'/venobox/venobox.js',
 	// 	array('jquery')
