@@ -147,3 +147,39 @@ function set_default_admin_color($user_id) {
     wp_update_user( $args );
 }
 add_action('user_register', 'set_default_admin_color');
+
+//admin_bar_menu
+function mvl_wp_admin_bar_menu( $wp_admin_bar ) {
+    // Remove customize, background and header from the menu bar.   
+    $wp_admin_bar->remove_node( 'about' );   
+    $wp_admin_bar->remove_node( 'wporg' );  
+    $wp_admin_bar->remove_node( 'documentation' );  
+    $wp_admin_bar->remove_node( 'support-forums' );  
+    $wp_admin_bar->remove_node( 'feedback' );  
+
+	$wp_admin_bar->add_node( array(
+		'parent' => 'wp-logo',
+		'id'     => 'ag-site',
+		'title'  => 'Site',
+		'href'   => esc_url( AG_SITE ),
+		'meta'   => array("target"=>"_blank")
+	)); 
+
+	$wp_admin_bar->add_node( array(
+		'parent' => 'wp-logo',
+		'id'     => 'ag-email',
+		'title'  => 'E-mail',
+		'href'   => esc_url( "mailto:".AG_EMAIL ),
+		'meta'   => array("target"=>"_blank")
+	)); 
+
+	$wp_admin_bar->add_node( array(
+		'parent' => 'wp-logo',
+		'id'     => 'ag-contato',
+		'title'  => 'Contato',
+		'href'   => esc_url( AG_CONTATO ),
+		'meta'   => array("target"=>"_blank")
+	)); 
+	
+}
+add_action( 'admin_bar_menu', 'mvl_wp_admin_bar_menu', 999 );

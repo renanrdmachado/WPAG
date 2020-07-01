@@ -9,6 +9,9 @@ define('AG_EMAIL', 'contato@movelcomunicacao.com.br');
 // Site da agência
 define('AG_SITE', 'http://movelcomunicacao.com.br');
 
+// Contato da agência
+define('AG_CONTATO', 'http://wa.me/554141015300');
+
 
 // DADOS DO CLIENTE
 define('CL_NAME', get_option('mvl_empresa'));
